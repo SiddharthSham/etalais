@@ -11,83 +11,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Etalais ⚡</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style.min.css">
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Homemade+Apple" rel="stylesheet">
     <link rel="icon" href="book.png">
 </head>
-
-<style>
-
-::-webkit-scrollbar { display: none; }
-
-*{
-    cursor: none !important;
-}
-
-html{
-    width:100%;
-}
-
-body{
-  position: relative;
-  background-image: url(paper.png);  
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1), inset 0 0 50px rgba(0, 0, 0, 0.1);
-}
-
-@keyframes fadein{from{opacity:0}to{opacity:1}}
-
-.title{
-        font-family: 'Fredericka the Great', cursive;
-        font-size:4rem;
-        color: #454343;
-        animation:1s ease-out 0s 1 fadein;
-    }
-    .content{
-        font-family: 'Homemade Apple', cursive;
-        color: #16264c;
-        font-size:1.3rem;
-        font-weight: 400;
-        line-height: 5.5vh;
-        text-align: left;
-        letter-spacing: 0px;
-        animation:1s ease-out 0s 1 fadein;
-        hyphens: manual;
-        word-spacing: 3px;
-        text-rendering: optimizeLegibility;
-    }
-
-.container{
-    text-align: center;
-    width:70vw;
-}
-
-#bar{
-    position: fixed;
-    width: 100%;
-    height: 0.45vh;
-    background: linear-gradient(to right,#1A237E,#4A148C);
-    top:0%;
-}
-
-#pad{
-    height:25vh;
-}
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {} 
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {} 
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {.content{text-align: justify;} }
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {.content{font-weight: 600;letter-spacing: 1px;text-align: justify;}} 
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {.content{font-weight: 600; line-height: 7vh;letter-spacing: 1px;text-align: justify;}}
-
-</style>
 
 <body>
     <div class="container-fluid" id="bar"></div>
@@ -100,83 +27,14 @@ body{
             <p class="mb-4">Across the street was the bookstore. And I was there, prowling the aisles for a new adventure. After hours of pertinent searching and impertinent requests to the store owner, I finally had in my hands a copy of " Etalais", an obscure magical find in a dusty corner of the dimly lit world of words.</p>
             <p class="mb-4">My stomach grumbled. I needed food. The book carefully wrapped in my jacket, I pushed open the door of the bookstore. The rain had turned into sleet, a torrential downpour obscuring vision and raining icy mists from the asphalt.</p>
             <p class="mb-4">I knew there'd be no motor vehicles down this road, so I trudged on head down, tucking my jacket protectively over the worn cover of my new book. The mists in front of me suddenly seemed disturbed.</p>
-            <p class="mb-4">I looked up.</p><p class="mb-4"> She was there, just two feet away. red umbrella clutched tightly in hand covering the head. her brown satchel flap slightly open exposing half a loaf of delicious Rommanesque garlic bread with cheese wrapped in tinfoil, and there, as I snuck another look, the faded cover of a favourite novel, very similar to mine : <br><br> ' Etalais' .</p>
+            <p class="mb-4">I looked up.</p><p class="mb-4"> She was there, just two feet away. red umbrella clutched tightly in hand covering the head. her brown satchel flap slightly open exposing half a loaf of delicious Romanesque garlic bread with cheese wrapped in tinfoil, and there, as I snuck another look, the faded cover of a favourite novel, very similar to mine : <br><br> ' Etalais' .</p>
         </div>
         <div class="content" style="text-align:end;">~ The Nerdy Snickerdoodle</div>
+        <a rel="preload" href="two.html" class="flip">↠ Next</a>
     <div class="container-fluid" id="pad"></div>
     </div>
 </body>
 
-
-<script>
-class Cursor {
-
-constructor() {
- this._dom = {};
- this._cursors = ["cursor_1", "cursor_2"];
- this.initHtml();
- this.initCss();
- this.initEvent();
-}
-
-initHtml() {
- let _cursor;
- const _this = this;
- this._dom["body"] = document.getElementsByTagName('body')[0];
- this._cursors.forEach(function (value) {
-     _cursor = document.createElement('div');
-     _cursor.className = value;
-     _cursor.id = value;
-     _this._dom.body.appendChild(_cursor)
-     _this._dom[value] = _cursor
- });
-
-}
-
-initCss() {
- const style_cursor = { position: 'fixed', borderRadius: '50%', transform: 'translateX(-50%) translateY(-50%)', pointerEvents: 'none', left: '100px', top: '50%' }
- const style_cursor_1 = { backgroundColor: '#000', height: '5px', width: '5px', zIndex: 99999 }
- const style_cursor_2 = { mixBlendMode: 'overlay', border: '1px solid #16264c', height: ' 30px', width: '30px', zIndex: 99998, webkitTransition: 'all 0.3s ease-out', mozTransition: 'all 0.3s ease-out', oTransition: 'all 0.3s ease-out', msTransition: 'all 0.3s ease-out', transition: 'all 0.3s ease-out' }
- this.setStylesOnElement(Object.assign({}, style_cursor, style_cursor_1), this._dom.cursor_1)
- this.setStylesOnElement(Object.assign({}, style_cursor, style_cursor_2), this._dom.cursor_2)
-}
-
-initEvent() {
- const _this = this;
- this._dom.body.addEventListener("mousemove", function (e) {
-     let _clientX = e.clientX;
-     let _clientY = e.clientY;
-     let _position = { top: _clientY + "px", left: _clientX + "px" };
-     _this.setStylesOnElement(_position, _this._dom.cursor_1)
-     _this.setStylesOnElement(_position, _this._dom.cursor_2)
- })
-}
-
-setStylesOnElement(styles, element) {
- Object.assign(element.style, styles);
-}
-
-}
-function detectmob() { 
- if( navigator.userAgent.match(/Android/i)
- || navigator.userAgent.match(/webOS/i)
- || navigator.userAgent.match(/iPhone/i)
- || navigator.userAgent.match(/iPad/i)
- || navigator.userAgent.match(/iPod/i)
- || navigator.userAgent.match(/BlackBerry/i)
- || navigator.userAgent.match(/Windows Phone/i)
- ){
-    return true;
-  }
- else {
-    return false;
-  }
-}
-
-if(!detectmob()){
-    const _cursor = new Cursor()
-}
-
-</script>
+<script src="script.min.js"></script>
 
 </html>
