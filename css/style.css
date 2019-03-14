@@ -10,7 +10,7 @@ html{
 
 body{
   position: relative;
-  background-image: url(paper.png);  
+  background-image: url(../img/paper.png);  
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1), inset 0 0 50px rgba(0, 0, 0, 0.1);
 }
 
@@ -61,17 +61,25 @@ body{
     font-family: 'Homemade Apple', cursive;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {} 
+@media only screen and (min-width: 768px) {
+    .content{
+        text-align: justify;
+    } 
+}
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {} 
+@media only screen and (min-width: 992px) {
+    .content{
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-align: justify;
+    }
+} 
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {.content{text-align: justify;} }
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {.content{font-weight: 600;letter-spacing: 1px;text-align: justify;}} 
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {.content{font-weight: 600; line-height: 7vh;letter-spacing: 1px;text-align: justify;}}
+@media only screen and (min-width: 1200px) {
+    .content{
+        font-weight: 600; 
+        line-height: 7vh;
+        letter-spacing: 1px;
+        text-align: justify;
+    }
+}
