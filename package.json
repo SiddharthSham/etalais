@@ -1,0 +1,28 @@
+{
+  "name": "etalais",
+  "version": "1.0.0",
+  "description": "A template for storytelling :)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html --public-url ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiddharthSham/etalais.git"
+  },
+  "keywords": [],
+  "author": "Siddharth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SiddharthSham/etalais/issues"
+  },
+  "homepage": "https://github.com/SiddharthSham/etalais#readme",
+  "dependencies": {
+    "@smoovy/scroller": "^0.1.15"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10"
+  }
+}
